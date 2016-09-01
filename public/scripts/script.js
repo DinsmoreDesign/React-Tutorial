@@ -114,9 +114,9 @@
       return (
 
         <form className="commentForm" onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="Your name" value={this.state.author} onChange={this.handleAuthorChange} />
-          <input type="text" placeholder="Say something..." value={this.state.text} onChange={this.handleTextChange} />
-          <input type="submit" value="Post" />
+          <input type="text" className="postName" placeholder="Your name" value={this.state.author} onChange={this.handleAuthorChange} />
+          <input type="text" className="postText" placeholder="Say something..." value={this.state.text} onChange={this.handleTextChange} />
+          <input type="submit" className="postSubmit" value="Post" />
         </form>
 
       );
@@ -141,10 +141,14 @@
       return (
 
         <div className="comment">
-          <h2 className="commentAuthor">
-            {this.props.author}
-          </h2>
-          <span dangerouslySetInnerHTML={this.rawMarkup()} />
+          <div className="name">
+            <h2 className="commentAuthor">
+              {this.props.author}:
+            </h2>
+          </div>
+          <div className="text">
+            <span dangerouslySetInnerHTML={this.rawMarkup()} />
+          </div>
         </div>
 
       );
